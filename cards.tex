@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{forloop}
+\usepackage[margin=1cm]{geometry}
+
+\pagenumbering{gobble}
+
+\begin{document}
+
+\noindent
+\newcounter{n}
+\forloop{n}{1}{\value{n} < 92}{
+	\includegraphics[width=0.5\linewidth]{card\arabic{n}.mps}
+}
+
+\end{document}
