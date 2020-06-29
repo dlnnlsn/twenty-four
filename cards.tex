@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{forloop}
+\usepackage{ifthen}
 \usepackage[margin=1cm]{geometry}
 
 \pagenumbering{gobble}
@@ -10,8 +11,16 @@
 
 \noindent
 \newcounter{n}
-\forloop{n}{1}{\value{n} < 92}{
-	\includegraphics[width=0.5\linewidth]{card\arabic{n}.mps}
-}
+\newcounter{perline}
+\begin{center}
+	\forloop{n}{1}{\value{n} < 92}{%
+		\includegraphics[width=0.3\linewidth]{card\arabic{n}.mps}
+		\stepcounter{perline}
+		\ifthenelse{\equal{\value{perline}}{3}}{%
+			\newline
+			\setcounter{perline}{0}
+		}{}
+	}
+\end{center}
 
 \end{document}
