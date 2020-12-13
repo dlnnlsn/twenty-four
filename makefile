@@ -7,9 +7,12 @@ cards.mp: twenty-four.py
 
 clean:
 	rm cards.mp
-	rm card*.mps
+	rm *.mps
 	rm cards.aux
 	rm cards.log
 	rm cards.fls
 	rm cards.fdb_latexmk
 	rm mpa*.tex
+	rm mptextmp.mp
+	rm mptextmp.mpx
+	
