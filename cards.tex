@@ -1,26 +1,25 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
 \usepackage{graphicx}
 \usepackage{forloop}
-\usepackage{ifthen}
-\usepackage[margin=1cm]{geometry}
+\usepackage[margin=0cm,tmargin=4cm]{geometry}
 
 \pagenumbering{gobble}
 
 \begin{document}
 
-\noindent
 \newcounter{n}
-\newcounter{perline}
+\setcounter{n}{1}
+\whiledo{\value{n} < 91}{%
+	\begin{center}%
+		{\noindent\includegraphics*[width=10cm]{card\arabic{n}.mps}}%
+		\stepcounter{n}%
+		{\includegraphics*[width=10cm]{card\arabic{n}.mps}}%
+	\end{center}%
+	\stepcounter{n}%
+}
 \begin{center}
-	\forloop{n}{1}{\value{n} < 92}{%
-		\includegraphics[width=0.3\linewidth]{card\arabic{n}.mps}
-		\stepcounter{perline}
-		\ifthenelse{\equal{\value{perline}}{3}}{%
-			\newline
-			\setcounter{perline}{0}
-		}{}
-	}
+	{\noindent\includegraphics*[width=10cm]{card91.mps}}
 \end{center}
 
 \end{document}
