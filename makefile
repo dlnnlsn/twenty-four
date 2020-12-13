@@ -12,3 +12,4 @@ clean:
 	rm cards.log
 	rm cards.fls
 	rm cards.fdb_latexmk
+	rm mpa*.tex
